@@ -1,1 +1,1 @@
-first project about QT maze
+first project about 3Dmaze based on QT
