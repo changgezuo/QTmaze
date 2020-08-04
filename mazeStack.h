@@ -12,13 +12,13 @@ public:
    ~MazeStack() {}
 
     bool isEmpty();
-    bool Push(Maze e);
+    void Push(Maze e);
     Maze GetTop();
-    Maze Pop();
+    void Pop();
 
 private:
     Node* bottom;
     Node* front;
-    int Size;
+    int size;
 };
 

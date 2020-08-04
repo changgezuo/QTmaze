@@ -1,16 +1,33 @@
 #include"MazeStack.h"
-
+#include"assert.h"
 bool MazeStack::isEmpty(){
-    if(front==bottom)
-        return true;
-    return false;
+   return front==bottom;
 }
 
-bool MazeStack::Push(Maze m){
 
-    Node*temp;
-    temp=front;
-    front=new Node();
-    if(!front)return false;
-    top->data=m;
-    top->next=temp;
+void MazeStack::Push(Maze m){
+    if(size==0){
+        Node*temp=new Node(m);
+        size=1;
+        front=temp;
+        bottom=temp;
+    }
+    Node*temp=new Node(m);
+    temp->next=front;
+    front=temp;
+    size++;
+}
+
+Maze MazeStack::gettop(){
+     assert(size);
+     return front->data;
+}
+
+void MazeStack::pop(){
+    assert(size);
+    Node*temp=front();
+    front=front->next;
+    delete temp;
+    size--;
+    if(!size)bottom=nullptr;
+}
