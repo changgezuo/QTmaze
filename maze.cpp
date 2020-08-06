@@ -4,8 +4,9 @@ using namespace std;
  
  
  
-void MazeMat::initMaze()//初始化迷宫矩阵
+void MazeMat::initMaze(int M, int N)//init the maze matrix
 {
+    matrix=vector<vector<Maze>>(M,vector<Maze>(n,new Maze());
     for(int i=0;i<M;i++)
         for(int j=0;j<N;j++)
         {
